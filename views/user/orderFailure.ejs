@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Failure</title>
+    <link rel="stylesheet" href="/path/to/your/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Order Failed</h1>
+        <% if (error) { %>
+            <p class="error"><%= error %></p>
+        <% } else { %>
+            <p>We're sorry, but there was an issue with your order (Order ID: <%= order._id %>).</p>
+            <p>Payment Status: <%= order.payment_status %></p>
+            <p>Please try again or contact our customer support for assistance.</p>
+            <a href="/orderSummary/<%= order._id %>" class="btn btn-primary">View Order Details</a>
+        <% } %>
+        <a href="/shop" class="btn btn-secondary">Continue Shopping</a>
+    </div>
+</body>
+</html>
